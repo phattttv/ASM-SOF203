@@ -9,5 +9,7 @@ package view;
  * @author trinh
  */
 public class test {
-    
+    public static void main(String[] args) {
+        
+    }
 }
