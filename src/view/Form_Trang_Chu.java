@@ -25,37 +25,14 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         Pnl_04.setVisible(false);
     }
 
-    private void SeeNV() {
-        btn_nhanvien.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                hiendanhsachnv();  // Xử lý ẩn/hiện sidePanel khi nhấn nút
-            }
-        });
-        
-    }
-    //hien chấm công tháng
-    private void SeeCCT() {
-        btn_chamCongThang.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                hiendschamcongthang();  // Xử lý ẩn/hiện sidePanel khi nhấn nút
-            }
-        });
-    }
     
-    private void hiendanhsachnv() {
-        boolean isVisible = Pnl_03.isVisible();
-        Pnl_03.setVisible(!isVisible); // Đảo ngược trạng thái hiển thị của Pnl_02
-    }
-    
-    private void hiendschamcongthang() {
-        boolean isVisible = Pnl_04.isVisible();
-        Pnl_04.setVisible(!isVisible); // Đảo ngược trạng thái hiển thị của Pnl_02
-    }
 
     private void user() {
         lbl_User.setText("Hà Gia Bảo");
+    }
+    public void VeTrangChu() {
+        Pnl_03.setVisible(false);
+        Pnl_04.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -160,6 +137,11 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         );
 
         btn_nhanvien.setText("Nhân Viên");
+        btn_nhanvien.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_nhanvienMouseClicked(evt);
+            }
+        });
         btn_nhanvien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_nhanvienActionPerformed(evt);
@@ -167,6 +149,11 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         });
 
         btn_chamCongThang.setText("Chấm Công Tháng");
+        btn_chamCongThang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_chamCongThangMouseClicked(evt);
+            }
+        });
         btn_chamCongThang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_chamCongThangActionPerformed(evt);
@@ -174,6 +161,11 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         });
 
         btn_chamCongNgay.setText("Chấm Công Ngày");
+        btn_chamCongNgay.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_chamCongNgayMouseClicked(evt);
+            }
+        });
 
         btn_phongBan.setText("Phòng Ban");
 
@@ -501,7 +493,7 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton7)
                 .addGap(18, 18, 18)
                 .addComponent(jButton8)
@@ -633,13 +625,13 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_nhanvienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nhanvienActionPerformed
-        Pnl_04.setVisible(false);
-        SeeNV();
+       Pnl_04.setVisible(false);
+        Pnl_03.setVisible(true);
     }//GEN-LAST:event_btn_nhanvienActionPerformed
 
     private void btn_chamCongThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_chamCongThangActionPerformed
         Pnl_03.setVisible(false);
-        SeeCCT();
+        Pnl_04.setVisible(true);
     }//GEN-LAST:event_btn_chamCongThangActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -649,6 +641,21 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void btn_nhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nhanvienMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_nhanvienMouseClicked
+
+    private void btn_chamCongThangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_chamCongThangMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btn_chamCongThangMouseClicked
+
+    private void btn_chamCongNgayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_chamCongNgayMouseClicked
+        // TODO add your handling code here:
+        VeTrangChu();
+    }//GEN-LAST:event_btn_chamCongNgayMouseClicked
 
     /**
      * @param args the command line arguments

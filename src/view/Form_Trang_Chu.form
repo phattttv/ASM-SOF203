@@ -159,6 +159,7 @@
             <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_nhanvienMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nhanvienActionPerformed"/>
           </Events>
         </Component>
@@ -167,6 +168,7 @@
             <Property name="text" type="java.lang.String" value="Ch&#x1ea5;m C&#xf4;ng Th&#xe1;ng"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_chamCongThangMouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_chamCongThangActionPerformed"/>
           </Events>
         </Component>
@@ -174,6 +176,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ch&#x1ea5;m C&#xf4;ng Ng&#xe0;y"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_chamCongNgayMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_phongBan">
           <Properties>
@@ -695,7 +700,7 @@
                       <Component id="jLabel13" min="-2" pref="53" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jButton7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton8" min="-2" max="-2" attributes="0"/>
