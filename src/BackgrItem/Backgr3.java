@@ -46,11 +46,11 @@ public class Backgr3 extends javax.swing.JPanel {
         super.paintChildren(grphcs);
         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.setColor(Color.decode("#92E1D0"));
-//        GradientPaint g = new GradientPaint(0, 0, Color.decode("#a8ff78"), getWidth(), 0, Color.decode("#78ffd6"));
-//        g2.setPaint(g);
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        g2.fillRect(0, 0, 20, getHeight());
+//        g2.setColor(Color.decode("#92E1D0"));
+        GradientPaint g = new GradientPaint(0, 0, Color.decode("#093637"), getWidth(), 0, Color.decode("#44A08D"));
+        g2.setPaint(g);
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
+        g2.fillRect(0, 0, 30, getHeight());
         super.paintComponent(grphcs);
     }
 

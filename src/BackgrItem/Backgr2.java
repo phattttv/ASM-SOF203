@@ -43,10 +43,11 @@ public class Backgr2 extends javax.swing.JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 //        float alpha = 0.2f; // Ví dụ: 0.7f cho độ trong suốt khoảng 70%
 //        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-        GradientPaint g = new GradientPaint(0, 0, Color.decode("#a8ff78"), getWidth(), 0, Color.decode("#78ffd6"));
-        g2.setPaint(g);
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        g2.fillRect(getWidth() - 20, 0, getWidth(), getHeight());
+//        GradientPaint g = new GradientPaint(0, 0, Color.decode("#a8ff78"), getWidth(), 0, Color.decode("#78ffd6"));
+        g2.setColor(Color.decode("#2C5364"));
+//        g2.setPaint(g);
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
+        g2.fillRect(getWidth() - 30, 0, getWidth(), getHeight());
         super.paintChildren(grphcs); 
         
 //        Graphics2D g2 = (Graphics2D) grphcs;

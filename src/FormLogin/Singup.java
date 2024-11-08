@@ -56,7 +56,6 @@ public class Singup extends javax.swing.JFrame {
         btn_dn.setContentAreaFilled(true);
         btn_dn.setBorderPainted(false);
         btn_dn.setBackground(Color.decode("#6AB8F7")); // Đặt màu nền
-
     }
     public void datnutdn() {
         btn_dk.setOpaque(true);
@@ -89,6 +88,8 @@ public class Singup extends javax.swing.JFrame {
         backgrmain = new BackgrItem.Backgr1();
         backgr3 = new BackgrItem.Backgr3();
         btn_tat = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         backgr2 = new BackgrItem.Backgr2();
         jPanel2 = new javax.swing.JPanel();
         btn_dn = new javax.swing.JButton();
@@ -105,7 +106,6 @@ public class Singup extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1008, 631));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1008, 631));
 
@@ -127,21 +127,35 @@ public class Singup extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconItem/logonho.png"))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Maiandra GD", 0, 26)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Work time management");
+
         javax.swing.GroupLayout backgr3Layout = new javax.swing.GroupLayout(backgr3);
         backgr3.setLayout(backgr3Layout);
         backgr3Layout.setHorizontalGroup(
             backgr3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgr3Layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(btn_tat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
+                .addGap(0, 275, Short.MAX_VALUE)
+                .addComponent(btn_tat, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(backgr3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         backgr3Layout.setVerticalGroup(
             backgr3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgr3Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(btn_tat, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(70, 70, 70)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0, 30));
@@ -353,7 +367,11 @@ public class Singup extends javax.swing.JFrame {
 
     private void btn_dnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dnActionPerformed
         datnutdn();
-
+        Login login = new Login();
+        login.setVisible(true);
+        login.pack();
+        login.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_btn_dnActionPerformed
 
     private void btn_dkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dkMouseClicked
@@ -385,8 +403,6 @@ public class Singup extends javax.swing.JFrame {
    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Pnl_dk;
-    private javax.swing.JPanel Pnl_dk1;
     private javax.swing.JPanel Pnl_dn;
     private javax.swing.JPanel Pnl_main;
     private BackgrItem.Backgr2 backgr2;
@@ -398,19 +414,13 @@ public class Singup extends javax.swing.JFrame {
     private javax.swing.JButton btn_tat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
