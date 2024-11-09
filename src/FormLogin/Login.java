@@ -4,7 +4,6 @@
  */
 package FormLogin;
 
-
 import ServiceDNDK.AESEncryptionDecryption;
 import java.awt.Color;
 
@@ -21,14 +20,14 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import view.Form_Trang_Chu;
+
 /**
  *
  * @author trinh
  */
 public class Login extends javax.swing.JFrame {
 
-    
-    
     public Login() {
         initComponents();
         btn_tat.setBorderPainted(false);
@@ -37,7 +36,7 @@ public class Login extends javax.swing.JFrame {
         datnutdn();
         connect();
     }
-    
+
     private String jdbcURL = "trNiqDu94jZXBQhVpKVo2wAdQpWHcxHFASD6xS8Wk8AvaCS9vQNV94Bn1ntqbUdeBaIp7jkmxWJcghYj6yMBv6dBIP7IuYw1qPdPos7WiUpuzR02rPT7PEra7RRT2VSQXtqZAdYC+Z/AIEWBgb46Ig==";
 // "jdbc:sqlserver://localhost:1433;databaseName=QLSV;trustServerCertificate=true";
     private String jdbcUsername = "Li1fiqKPnyDyawrodO+Hlg==";//sa
@@ -45,22 +44,19 @@ public class Login extends javax.swing.JFrame {
     Connection con;
     private AESEncryptionDecryption aesEncryptionDecryption = new AESEncryptionDecryption();
     final String secretKey = "thekeyhere";
-    
-    
-     private String MD5encoder(String text) throws NoSuchAlgorithmException {
+
+    private String MD5encoder(String text) throws NoSuchAlgorithmException {
         MessageDigest md5 = MessageDigest.getInstance("MD5");
         md5.update(StandardCharsets.UTF_8.encode(text));
         return String.format("%032x", new BigInteger(1, md5.digest()));
     }
-     
 
     protected final Connection getConnection() throws SQLException {
         Connection connection = DriverManager.getConnection(aesEncryptionDecryption.decrypt(jdbcURL, secretKey),
                 aesEncryptionDecryption.decrypt(jdbcUsername, secretKey), aesEncryptionDecryption.decrypt(jdbcPassword, secretKey));
         return connection;
     }
-    
-    
+
     public void connect() {
         try {
             this.con = getConnection();
@@ -70,7 +66,6 @@ public class Login extends javax.swing.JFrame {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
 
     public void datnutdk() {
         btn_dk.setOpaque(true);
@@ -83,6 +78,7 @@ public class Login extends javax.swing.JFrame {
         btn_dn.setBackground(Color.decode("#6AB8F7")); // Đặt màu nền
 
     }
+
     public void datnutdn() {
         btn_dk.setOpaque(true);
         btn_dk.setContentAreaFilled(true);
@@ -94,8 +90,7 @@ public class Login extends javax.swing.JFrame {
         btn_dn.setBackground(Color.decode("#6A8BF7"));
 
     }
-    
-    
+
     public void datnutsm() {
         btn_sm.setOpaque(true);
         btn_sm.setContentAreaFilled(true);
@@ -103,6 +98,7 @@ public class Login extends javax.swing.JFrame {
         btn_sm.setBackground(Color.decode("#6AB8F7")); // Đặt màu nền
 
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -134,7 +130,6 @@ public class Login extends javax.swing.JFrame {
         btn_tat.setForeground(new java.awt.Color(255, 255, 255));
         btn_tat.setText("X");
         btn_tat.setName(""); // NOI18N
-        btn_tat.setPreferredSize(new java.awt.Dimension(50, 50));
         btn_tat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_tatMouseEntered(evt);
@@ -168,7 +163,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgr3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_tat, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_tat, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         backgr3Layout.setVerticalGroup(
             backgr3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,7 +365,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btn_dnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_dnActionPerformed
         datnutdn();
-        
+
     }//GEN-LAST:event_btn_dnActionPerformed
 
     private void btn_dkMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dkMouseClicked
@@ -415,6 +410,11 @@ public class Login extends javax.swing.JFrame {
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 JOptionPane.showMessageDialog(this, "Login sucessful.");
+                Form_Trang_Chu tc = new Form_Trang_Chu();
+                tc.setVisible(true);
+                tc.pack();
+                tc.setLocationRelativeTo(null);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(this, "Login failed.");
             }
@@ -426,8 +426,8 @@ public class Login extends javax.swing.JFrame {
     private void printSQLException(SQLException e) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
-    
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Pnl_dn;
     private javax.swing.JPanel Pnl_main;
