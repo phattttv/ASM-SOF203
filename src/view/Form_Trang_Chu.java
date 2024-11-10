@@ -11,6 +11,7 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         Pnl_QuanLyNhanVien.setVisible(false);
         Pnl_QuanLyChamCongThang.setVisible(false);
         Pnl_QuanLyChamCongNgay.setVisible(false);
+        setbackgr();
     }
 
     @SuppressWarnings("unchecked")
@@ -129,7 +130,6 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1024, 604));
 
         Pnl_NenMenu.setBackground(new java.awt.Color(51, 51, 255));
         Pnl_NenMenu.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 0, 204), new java.awt.Color(0, 0, 204), new java.awt.Color(0, 0, 204), new java.awt.Color(0, 0, 204)));
@@ -218,10 +218,10 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
                             .addComponent(lbl_ChamCongThang, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_ChamCongNgay, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_PhongBan, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 25, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_MenuLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addGap(71, 71, 71)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Pnl_MenuLayout.setVerticalGroup(
@@ -512,7 +512,7 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1135,6 +1135,11 @@ public class Form_Trang_Chu extends javax.swing.JFrame {
         ClockThread clockThread = new ClockThread(lblTime);
         Thread thread = new Thread(clockThread);
         thread.start();
+    }
+    
+    public void setbackgr() {
+        Pnl_NenMenu.setBackground(Color.decode("#c1d3fe"));
+        Pnl_Menu.setBackground(Color.decode("#abc4ff"));
     }
 
     private void txt(){
