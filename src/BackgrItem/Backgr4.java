@@ -4,6 +4,8 @@
  */
 package BackgrItem;
 
+import java.awt.Color;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -12,12 +14,12 @@ import java.awt.RenderingHints;
  *
  * @author trinh
  */
-public class Backgr1 extends javax.swing.JPanel {
+public class Backgr4 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Backgr1
+     * Creates new form Backgr4
      */
-    public Backgr1() {
+    public Backgr4() {
         initComponents();
         setOpaque(false);
     }
@@ -42,13 +44,15 @@ public class Backgr1 extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     protected void paintComponent(Graphics grphcs) {
         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2.setColor(getBackground());
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
-        super.paintComponent(grphcs); 
+//        GradientPaint g = new GradientPaint(0, 0, Color.decode("#014f86"), 0, getHeight(), Color.decode("#61a5c2"));
+//        g2.setPaint(g);
+        g2.setColor(Color.decode("#014f86"));
+        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 0, 0);
+        super.paintComponent(grphcs);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

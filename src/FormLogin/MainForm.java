@@ -4,6 +4,10 @@
  */
 package FormLogin;
 
+import java.awt.Toolkit;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author trinh
@@ -11,32 +15,16 @@ package FormLogin;
 public class MainForm {
 
     public static void main(String[] args) {
-        
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (UnsupportedLookAndFeelException ignored) {
+            Toolkit.getDefaultToolkit().beep();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+            ex.printStackTrace();
+            return;
         }
         
-        Login login = new Login();
-        login.setVisible(true);
-        login.pack();
-        login.setLocationRelativeTo(null);
-
-//        Singup dk = new Singup();
-//        dk.setVisible(true);
-//        dk.pack();
-//        dk.setLocationRelativeTo(null);
+        LoginMain lg = new LoginMain();
+        lg.setVisible(true);
     }
 }
