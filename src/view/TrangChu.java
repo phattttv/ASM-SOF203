@@ -18,6 +18,8 @@ public class TrangChu extends javax.swing.JFrame {
      */
     public TrangChu() {
         initComponents();
+        Time();
+        setLocationRelativeTo(null);
         cCN1.setVisible(false);
         cCT1.setVisible(false);
         pB1.setVisible(false);
@@ -30,28 +32,28 @@ public class TrangChu extends javax.swing.JFrame {
         pB1.setVisible(false);
         qLNV2.setVisible(true);
     }
-    
+
     public void batcct() {
         qLNV2.setVisible(false);
         cCN1.setVisible(false);
         pB1.setVisible(false);
         cCT1.setVisible(true);
     }
-    
+
     public void batccn() {
         qLNV2.setVisible(false);
         cCT1.setVisible(false);
         pB1.setVisible(false);
         cCN1.setVisible(true);
     }
-    
+
     public void batpb() {
         qLNV2.setVisible(false);
         cCT1.setVisible(false);
         cCN1.setVisible(false);
         pB1.setVisible(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -340,7 +342,7 @@ public class TrangChu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       batcct();
+        batcct();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
@@ -350,6 +352,12 @@ public class TrangChu extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         batpb();
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void Time() {
+        ClockThread clockThread = new ClockThread(lblTime);
+        Thread thread = new Thread(clockThread);
+        thread.start();
+    }
 
     /**
      * @param args the command line arguments
